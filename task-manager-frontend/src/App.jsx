@@ -9,9 +9,9 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to={token ? '/tasks' : '/login'} />} />
-        <Route path="/login" element={<LoginPage setToken={setToken} />} />
-        <Route path="/tasks" element={token ? <TaskPage token={token} /> : <Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to={'/tasks'} />} />
+        {/* <Route path="/login" element={<LoginPage setToken={setToken} />} /> */}
+        <Route path="/tasks" element={<TaskPage token={token} />} />
       </Routes>
     </Router>
   );

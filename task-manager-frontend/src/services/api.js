@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/tasks'; 
+const API_URL = 'http://localhost:3001'; 
 
 // Login
 export const login = async (email, password) => {
@@ -25,8 +25,8 @@ export const addTask = async (task, token) => {
 };
 
 // Mark task as completed
-export const completeTask = async (taskId, token) => {
-  const response = await axios.patch(`${API_URL}/tasks/${taskId}`, { completed: true }, {
+export const completeTask = async (task, token) => {
+  const response = await axios.put(`${API_URL}/tasks/${task.id}`, task, {
     headers: { Authorization: `Bearer ${token}` },
   });
   return response.data;

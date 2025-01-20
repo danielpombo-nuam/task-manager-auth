@@ -19,9 +19,10 @@ const TaskPage = ({ token }) => {
     setTasks((prev) => [...prev, newTask]);
   };
 
-  const handleCompleteTask = async (taskId) => {
-    await completeTask(taskId, token);
-    setTasks((prev) => prev.map((t) => (t.id === taskId ? { ...t, completed: true } : t)));
+  const handleCompleteTask = async (task) => {
+    task.status = 'COMPLETED';
+    await completeTask(task, token);
+    setTasks((prev) => prev.map((t) => (t.id === task.id ? { status: 'COMPLETED',...t } : t)));
   };
 
   const handleDeleteTask = async (taskId) => {

@@ -6,7 +6,7 @@ import { TASK_MANAGER_SERVICE } from 'src/core-task-manager/task-manager.module'
 import { TaskManagerServicePort } from 'src/core-task-manager/application/ports';
 
 @Controller('/tasks')
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 export class TaskManagerController {
     constructor(
         @Inject(TASK_MANAGER_SERVICE)
